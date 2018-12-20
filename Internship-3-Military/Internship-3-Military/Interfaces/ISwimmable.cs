@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Internship_3_Military
+﻿namespace Internship_3_Military.Interfaces
 {
     interface ISwimmable
     {

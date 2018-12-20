@@ -1,4 +1,4 @@
-﻿namespace Internship_3_Military
+﻿namespace Internship_3_Military.Interfaces
 {
     public interface IDrivable
     {

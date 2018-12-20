@@ -1,4 +1,5 @@
 ﻿using System;
+using Internship_3_Military.Classes;
 
 namespace Internship_3_Military
 {
@@ -8,12 +9,12 @@ namespace Internship_3_Military
         {
             var exampleTank = new Tank(25000, 40);
             var exampleWarship = new Warship(75000, 50);
-            var exampleAmphibia = new Amphibia(10000, 30);
+            var exampleAmphibian = new Amphibian(10000, 30);
 
-            var tankDistance = 0;
-            var warshipDistance = 0;
-            var amphibiaDriveDistance = 0;
-            var amphibiaSwimDistance = 0;
+            int tankDistance;
+            int warshipDistance;
+            int amphibianDriveDistance;
+            int amphibianSwimDistance;
 
             do
             {
@@ -21,48 +22,50 @@ namespace Internship_3_Military
                 tankDistance = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the warship's swimming distance:");
                 warshipDistance = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the amphibia's driving distance:");
-                amphibiaDriveDistance = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the amphibia swimming distance:");
-                amphibiaSwimDistance = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the amphibian's driving distance:");
+                amphibianDriveDistance = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the amphibian swimming distance:");
+                amphibianSwimDistance = int.Parse(Console.ReadLine());
 
-                if (amphibiaDriveDistance + amphibiaSwimDistance > tankDistance ||
-                    amphibiaDriveDistance + amphibiaSwimDistance > warshipDistance)
+                if (amphibianDriveDistance + amphibianSwimDistance > tankDistance ||
+                    amphibianDriveDistance + amphibianSwimDistance > warshipDistance)
                 {
-                    Console.WriteLine("Error! Amphibia needs to have the shortest path!");
+                    Console.WriteLine("Error! Amphibian needs to have the shortest path!");
                 }
 
-            } while (amphibiaDriveDistance + amphibiaSwimDistance > tankDistance ||
-                     amphibiaDriveDistance + amphibiaSwimDistance > warshipDistance);
+            } while (amphibianDriveDistance + amphibianSwimDistance > tankDistance ||
+                     amphibianDriveDistance + amphibianSwimDistance > warshipDistance);
 
             Console.WriteLine("Enter the number of soldiers:");
             var numberOfSoldiers = int.Parse(Console.ReadLine());
 
             tankDistance = tankDistance * exampleTank.NumberOfDistancesCovered(numberOfSoldiers);
-            amphibiaDriveDistance = amphibiaDriveDistance * exampleTank.NumberOfDistancesCovered(numberOfSoldiers);
-            amphibiaSwimDistance = amphibiaSwimDistance * exampleTank.NumberOfDistancesCovered(numberOfSoldiers);
+            amphibianDriveDistance = amphibianDriveDistance * exampleTank.NumberOfDistancesCovered(numberOfSoldiers);
+            amphibianSwimDistance = amphibianSwimDistance * exampleTank.NumberOfDistancesCovered(numberOfSoldiers);
             warshipDistance = warshipDistance * exampleTank.NumberOfDistancesCovered(numberOfSoldiers);
 
             exampleTank.Move(ref tankDistance);
-            exampleAmphibia.Move(ref amphibiaDriveDistance);
-            exampleAmphibia.Swim(ref amphibiaSwimDistance, exampleAmphibia.AverageSpeed);
-            var fullAmphibiaDistance = amphibiaSwimDistance + amphibiaDriveDistance;
+            exampleAmphibian.Move(ref amphibianDriveDistance);
+            exampleAmphibian.Swim(ref amphibianSwimDistance, exampleAmphibian.AverageSpeed);
+            var fullAmphibianDistance = amphibianSwimDistance + amphibianDriveDistance;
             exampleWarship.Swim(ref warshipDistance, exampleWarship.AverageSpeed);
 
             exampleTank.Print(tankDistance);
-            exampleAmphibia.Print(fullAmphibiaDistance);
+            exampleAmphibian.Print(fullAmphibianDistance);
             exampleWarship.Print(warshipDistance);
 
             var tankFuelConsumed = exampleTank.FuelConsumed(tankDistance);
-            var amphibiaFuelConsumed = exampleAmphibia.FuelConsumed(fullAmphibiaDistance);
+            var amphibianFuelConsumed = exampleAmphibian.FuelConsumed(fullAmphibianDistance);
             var warshipFuelConsumed = exampleWarship.FuelConsumed(warshipDistance);
 
-            if (tankFuelConsumed < amphibiaFuelConsumed && tankFuelConsumed < warshipFuelConsumed)
-                Console.WriteLine($"The optimal vehicle is the tank.");
-            else if (amphibiaFuelConsumed < tankFuelConsumed && amphibiaFuelConsumed < warshipFuelConsumed)
-                Console.WriteLine($"The optimal vehicle is the amphibia.");
-            else if (warshipFuelConsumed < amphibiaFuelConsumed && warshipFuelConsumed < tankFuelConsumed)
-                Console.WriteLine($"The optimal vehicle is the warship.");
+            Console.WriteLine();
+
+            if (tankFuelConsumed < amphibianFuelConsumed && tankFuelConsumed < warshipFuelConsumed)
+                Console.WriteLine("The optimal vehicle is the tank.");
+            else if (amphibianFuelConsumed < tankFuelConsumed && amphibianFuelConsumed < warshipFuelConsumed)
+                Console.WriteLine("The optimal vehicle is the amphibian.");
+            else if (warshipFuelConsumed < amphibianFuelConsumed && warshipFuelConsumed < tankFuelConsumed)
+                Console.WriteLine("The optimal vehicle is the warship.");
         }
     }
 }
