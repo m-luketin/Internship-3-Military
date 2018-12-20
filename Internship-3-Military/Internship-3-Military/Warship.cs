@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Internship_3_Military
 {
-    public class Warship : Vehicle
+    public class Warship : Vehicle, ISwimmable
     {
-        public Warship(int weight, double averageSpeed)
+        public Warship(int weight, int averageSpeed)
             : base(weight, averageSpeed)
         {
             Capacity = 50;
@@ -25,6 +23,16 @@ namespace Internship_3_Military
                     distance += 3;
                 swimTime = swimTime.Subtract(interval);
             }
+        }
+        public override void Print(int distance)
+        {
+            Console.WriteLine(Id);
+            Console.WriteLine($"Weight:           {Weight}");
+            Console.WriteLine($"Average speed:    {AverageSpeed}");
+            Console.WriteLine($"Fuel consumption: {FuelConsumption}");
+            Console.WriteLine($"Weight:           {Capacity}");
+            Console.WriteLine($"Fuel consumed: {(double)distance / 100 * FuelConsumption}");
+            Console.WriteLine();
         }
     }
 }
