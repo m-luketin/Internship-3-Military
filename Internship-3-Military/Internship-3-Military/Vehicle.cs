@@ -2,7 +2,7 @@
 
 public class Vehicle
 {
-	public Vehicle(Guid id, int weight, double averageSpeed)
+	public Vehicle(int weight, double averageSpeed)
 	{
 	    ID = new Guid();
 	    Weight = weight;
@@ -15,6 +15,5 @@ public class Vehicle
     public static double FuelConsumption { get; set; }
     public static int Capacity { get; set; }
 
-
-
+    
 }

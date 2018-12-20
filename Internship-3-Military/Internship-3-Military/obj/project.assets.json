@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\YaBoi\\Desktop\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military.csproj",
+      "projectUniqueName": "C:\\Users\\YaBoi\\Desktop\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military.csproj",
       "projectName": "Internship-3-Military",
-      "projectPath": "C:\\Users\\YaBoi\\Desktop\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military.csproj",
+      "projectPath": "C:\\Users\\YaBoi\\Desktop\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military.csproj",
       "packagesPath": "C:\\Users\\YaBoi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\YaBoi\\Desktop\\Internship-3-Military\\Internship-3-Military\\obj\\",
+      "outputPath": "C:\\Users\\YaBoi\\Desktop\\Internship-3-Military\\Internship-3-Military\\Internship-3-Military\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
